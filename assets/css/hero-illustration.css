@@ -1,0 +1,31 @@
+/* Hero illustration variant — SVG artwork instead of the canvas animation.
+   Scoped under #hero so it only affects this page's hero and never touches
+   the shared assets/css/style.css used by index.html. */
+
+#hero .hero-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+#hero .hero-art svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #hero .root-node { animation: heroPulse 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  #hero .highlight-path { stroke-dasharray: 6 10; animation: heroFlow 1.6s linear infinite; }
+  #hero .badge-ring { animation: heroBreathe 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  #hero .scan-line { animation: heroSweep 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  #hero .ecg-axis { stroke-dasharray: 14 8; animation: heroEcgFlow 2.4s linear infinite; }
+}
+
+@keyframes heroPulse { 0%, 100% { transform: scale(1); opacity: 0.95; } 50% { transform: scale(1.18); opacity: 1; } }
+@keyframes heroFlow { to { stroke-dashoffset: -32; } }
+@keyframes heroBreathe { 0%, 100% { opacity: 0.5; } 50% { opacity: 0.85; } }
+@keyframes heroSweep { 0%, 100% { transform: scaleY(0.85); opacity: 0.35; } 50% { transform: scaleY(1.1); opacity: 0.7; } }
+@keyframes heroEcgFlow { to { stroke-dashoffset: -220; } }

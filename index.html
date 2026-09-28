@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>MedWM — The First Workshop on Medical World Models (AAAI-27)</title>
+  <meta content="The First Workshop on Medical World Models, held in conjunction with AAAI-27, February 22-23 2027, Montreal, Canada." name="description">
+  <meta content="medical world models, AAAI-27, workshop, healthcare AI, causal inference, digital twins" name="keywords">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css?v=20260929" rel="stylesheet">
+
+  <!-- Custom CSS for schedule table / TODO banner -->
+  <style>
+    .schedule-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(12, 12, 33, 0.14);
+      margin: 24px 0;
+      font-size: 0.95rem;
+    }
+    .schedule-table thead th {
+      background: #0C0C21;
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 14px 20px;
+      text-align: left;
+      border: none;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+    .schedule-table tbody td {
+      padding: 13px 20px;
+      border-bottom: 1px solid #e4e4ec;
+      text-align: left;
+      vertical-align: middle;
+    }
+    .schedule-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .schedule-table tbody tr:nth-child(even) {
+      background-color: #f3f3f7;
+    }
+    .schedule-table tbody tr:hover {
+      background-color: #e7e7f0;
+      transition: background-color 0.2s ease;
+    }
+    .schedule-table tbody td:first-child {
+      font-weight: 700;
+      color: #0C0C21;
+      white-space: nowrap;
+    }
+    .schedule-table .break-row td {
+      color: #6c757d;
+      font-style: italic;
+    }
+    .todo-inline {
+      display: inline-block;
+      background: #f1f3f5;
+      color: #868e96;
+      font-weight: 500;
+      font-style: italic;
+      font-size: .78rem;
+      border: 1px dashed #ced4da;
+      border-radius: 4px;
+      padding: .1rem .5rem;
+      margin-left: .3rem;
+      white-space: nowrap;
+    }
+    #hero h1 { text-transform: none; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container-fluid container-xxl d-flex align-items-center">
+
+      <div id="logo" class="me-auto d-flex align-items-center">
+        <h1 class="mb-0"><a href="index.html">Med<span>WM</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Introduction</a></li>
+          <li><a class="nav-link scrollto" href="#topic">Topics</a></li>
+          <li><a class="nav-link scrollto" href="#cfp">Call for Papers</a></li>
+          <li><a class="nav-link scrollto" href="#speakers">Speakers</a></li>
+          <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
+          <li><a class="nav-link scrollto" href="#accepted-paper">Accepted Papers</a></li>
+          <li><a class="nav-link scrollto" href="#organizers">Organizers</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="200">
+      <h1 class="mb-4 pb-0">
+        The First Workshop on <br>Medical World Models
+      </h1>
+      <p style="font-size: 22px; color: rgba(255, 255, 255, 0.9); margin-top: 25px; font-weight: 300; letter-spacing: 0.5px;">
+        Held in conjunction with AAAI-27<br>
+        February 22&ndash;23, 2027 <span class="todo-inline">TODO: exact day</span><br>
+        Montr&eacute;al, Canada
+      </p>
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container position-relative" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Introduction</h2>
+            <p style="font-size: 18px;">Many existing clinical AI models remain static or retrospective: they predict diagnosis, deterioration, readmission, mortality, or treatment response under observed care, but do not explicitly model how a patient may evolve under alternative interventions. We define <strong>medical world models</strong> as AI systems that learn patient-state dynamics from multimodal clinical data, simulate future disease trajectories under alternative interventions, and support safe clinical decision-making under uncertainty.</p>
+            <p style="font-size: 18px;">This workshop brings together researchers and practitioners from artificial intelligence, machine learning, medicine, biomedical informatics, medical imaging, causal inference, clinical decision support, and digital health, through invited talks, paper spotlights, posters, and a panel discussion, to define an emerging interdisciplinary research agenda for dynamic, simulation-based, decision-grade healthcare AI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- ======= Topics Section ======= -->
+    <section id="topic" class="section-with-bg">
+      <br><br>
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Topics</h2>
+          <p>We invite submissions on topics including, but not limited to:</p>
+        </div>
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
+                <ul style="color: #6c757d; margin: 0;">
+                  <li>Medical world model design and structural frameworks</li>
+                  <li>Dynamic disease trajectory prediction</li>
+                  <li>Foundation models for longitudinal healthcare data</li>
+                  <li>Counterfactual simulation of treatment trajectories</li>
+                  <li>Digital twins and patient-specific clinical modeling</li>
+                  <li>Multimodal patient-state representation learning</li>
+                  <li>Causal, mechanistic, and simulation-based healthcare AI</li>
+                  <li>Continuous-time, event-driven, and irregularly sampled clinical modeling</li>
+                  <li>Translational validation, target-trial emulation, and real-world evidence</li>
+                  <li>Benchmark, dataset, and demonstration work on medical world models</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br>
+    </section>
+    <!-- End Topics Section -->
+
+    <!-- ======= Call For Papers Section ======= -->
+    <section id="cfp">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Call For Papers</h2>
+        </div>
+        <h3>Key Dates</h3>
+        <table class="schedule-table">
+          <thead>
+            <tr><th style="width: 45%;">Event</th><th>Date</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Call for Participation posted by AAAI</td><td>October 16, 2026</td></tr>
+            <tr><td>Paper submissions due to organizers</td><td>November 20, 2026</td></tr>
+            <tr><td>Acceptance notifications</td><td>December 2, 2026</td></tr>
+            <tr><td>Camera-ready / final materials due</td><td>December 15, 2026 <span class="todo-inline">TODO: confirm</span></td></tr>
+            <tr><td>Workshop day</td><td>February 22&ndash;23, 2027 <span class="todo-inline">TODO: exact day</span>, Montr&eacute;al, Canada</td></tr>
+          </tbody>
+        </table>
+        All dates Anywhere on Earth (AoE) unless noted otherwise.
+        <br><br>
+        <h3>Submission Format</h3>
+        <p>
+          All papers must be submitted in PDF format, using the AAAI author kit. We welcome two types of submissions:<br>
+          <b>Full papers</b>: 6&ndash;8 pages (excluding references and appendices).<br>
+          <b>Short / poster / position papers</b>: 2&ndash;4 pages (excluding references and appendices).<br><br>
+          The workshop is non-archival by default, allowing later conference or journal submission.
+        </p>
+        <h3>Submission Site</h3>
+        <p>
+          Submissions will be handled via OpenReview. <span class="todo-inline">TODO: insert OpenReview venue link once created</span>
+        </p>
+      </div>
+    </section>
+    <!-- End Call For Papers Section -->
+
+    <!-- ======= Speakers Section ======= -->
+    <section id="speakers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Confirmed Keynote and Invited Speakers</h2>
+        </div>
+
+        <div class="row justify-content-center gx-3" style="max-width: 1000px; margin: 0 auto;">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="100" style="text-align: center;">
+              <img src="assets/img/speakers/james_zou.jpg" alt="James Zou" class="img-fluid" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;">
+              <br><a href="https://www.james-zou.com/" target="_blank" rel="external nofollow noopener" style="font-size: 1.4em; color: #00356B; font-weight: bold;">James Zou</a>
+              <p style="font-size: 1.1em; color: #666;">Associate Professor, Stanford University</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="assets/img/speakers/hoifung_poon.jpg" alt="Hoifung Poon" class="img-fluid" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;">
+              <br><a href="https://www.linkedin.com/in/hoifung-poon-9559943/" target="_blank" rel="external nofollow noopener" style="font-size: 1.4em; color: #00356B; font-weight: bold;">Hoifung Poon</a>
+              <p style="font-size: 1.1em; color: #666;">Chief AI Officer, Recursion</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300" style="text-align: center;">
+              <img src="assets/img/speakers/tal_arbel.jpg" alt="Tal Arbel" class="img-fluid" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;">
+              <br><a href="https://www.mcgill.ca/cim/arbel" target="_blank" rel="external nofollow noopener" style="font-size: 1.4em; color: #00356B; font-weight: bold;">Tal Arbel</a>
+              <p style="font-size: 1.1em; color: #666;">Full Professor, McGill University</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Speakers Section -->
+
+    <!-- ======= Schedule Section ======= -->
+    <section id="schedule" class="section-with-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Workshop Schedule</h2>
+          <p class="todo-inline">TODO: exact date and room pending AAAI assignment</p>
+        </div>
+
+        <table class="schedule-table">
+          <thead>
+            <tr><th style="width: 25%;">Time</th><th>Activity</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>08:45 &ndash; 09:00</td><td>Welcome and Introduction</td></tr>
+            <tr><td>09:00 &ndash; 09:30</td><td>Invited Keynote 1</td></tr>
+            <tr><td>09:30 &ndash; 10:00</td><td>Invited Keynote 2</td></tr>
+            <tr><td>10:00 &ndash; 10:30</td><td>Invited Keynote 3</td></tr>
+            <tr><td>10:30 &ndash; 11:00</td><td>Paper Spotlight Presentations</td></tr>
+            <tr class="break-row"><td>11:00 &ndash; 11:45</td><td>Coffee Break, Poster Session, and Networking</td></tr>
+            <tr><td>11:45 &ndash; 12:30</td><td>Panel Discussion and Audience Q&amp;A</td></tr>
+            <tr><td>12:30 &ndash; 12:35</td><td>Closing Remarks and Best Paper Recognition</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!-- End Schedule Section -->
+
+    <!-- ======= Accepted Papers ======= -->
+    <section id="accepted-paper">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Accepted Papers</h2>
+          <p>To be announced after the review process (expected early December 2026).</p>
+        </div>
+      </div>
+    </section>
+    <!-- End Accepted Papers -->
+
+    <!-- ======= Organizers Section ======= -->
+    <section id="organizers" class="section-with-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Organizing Committee</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="100" style="text-align: center;">
+              <img src="assets/img/organizers/zhe_xu.png" alt="Zhe Xu" class="img-fluid">
+              <br><a href="https://lemoshu.github.io/" target="_blank" rel="external nofollow noopener" style="font-size: 1.2em; color: #00356B;">Zhe Xu</a>
+              <p>Postdoc, Columbia University; incoming Assoc. Professor, Tongji University <span class="todo-inline">TODO: confirm Tongji affiliation &mdash; his own homepage currently lists only Columbia/CUHK/Harvard/THU</span><br><strong>Main Contact</strong></p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="150" style="text-align: center;">
+              <img src="assets/img/organizers/zhen_chen.jpg" alt="Zhen Chen" class="img-fluid">
+              <br><a href="https://franciszchen.github.io/" target="_blank" rel="external nofollow noopener" style="font-size: 1.2em; color: #00356B;">Zhen Chen</a>
+              <p>Assistant Professor, The Hong Kong Polytechnic University</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="assets/img/organizers/yixin_wang.jpg" alt="Yixin Wang" class="img-fluid">
+              <br><a href="https://www.yyixinwang.com/" target="_blank" rel="external nofollow noopener" style="font-size: 1.2em; color: #00356B;">Yixin Wang</a>
+              <p>Final-year Ph.D. Candidate, Stanford University</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="250" style="text-align: center;">
+              <img src="assets/img/organizers/jiazhen_pan.jpg" alt="Jiazhen Pan" class="img-fluid">
+              <br><a href="https://jiazhenpan.me/" target="_blank" rel="external nofollow noopener" style="font-size: 1.2em; color: #00356B;">Jiazhen Pan</a>
+              <p>Research Fellow, Stanford University &amp; Technical University of Munich</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300" style="text-align: center;">
+              <img src="assets/img/organizers/hongwei_bran_li.png" alt="Hongwei Bran Li" class="img-fluid">
+              <br><a href="https://hongweilibran.github.io/" target="_blank" rel="external nofollow noopener" style="font-size: 1.2em; color: #00356B;">Hongwei Bran Li</a>
+              <p>Assistant Professor, National University of Singapore</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Organizers Section -->
+
+    <!-- ======= Advisory Board Section ======= -->
+    <section id="advisory-board">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Advisory Board</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="100" style="text-align: center;">
+              <img src="assets/img/advisory/daniel_rueckert.png" alt="Daniel Rueckert" class="img-fluid">
+              <br><a href="https://wp.doc.ic.ac.uk/dr/" target="_blank" rel="external nofollow noopener" style="font-size: 1.2em; color: #00356B;">Daniel Rueckert</a>
+              <p>Alexander von Humboldt Professor, TU Munich; Professor, Imperial College London</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="150" style="text-align: center;">
+              <img src="assets/img/advisory/shaoting_zhang.png" alt="Shaoting Zhang" class="img-fluid">
+              <br><a href="http://www.qingyuan.sjtu.edu.cn/a/Shaoting-Zhang.html" target="_blank" rel="external nofollow noopener" style="font-size: 1.2em; color: #00356B;">Shaoting Zhang</a>
+              <p>Professor, Shanghai Jiao Tong University; CEO, SenseCare</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="assets/img/advisory/kay_chen_tan.jpg" alt="Kay Chen Tan" class="img-fluid">
+              <br><a href="https://www.polyu.edu.hk/dsai/people/academic-staff/tankaychen/?sc_lang=en" target="_blank" rel="external nofollow noopener" style="font-size: 1.2em; color: #00356B;">Kay Chen Tan</a>
+              <p>Chair Professor, The Hong Kong Polytechnic University; Fellow, IEEE</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="250" style="text-align: center;">
+              <img src="assets/img/advisory/eric_xing.jpg" alt="Eric Xing" class="img-fluid">
+              <br><a href="http://www.cs.cmu.edu/~epxing/" target="_blank" rel="external nofollow noopener" style="font-size: 1.2em; color: #00356B;">Eric Xing</a>
+              <p>President &amp; University Professor, MBZUAI; Professor, Carnegie Mellon University</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300" style="text-align: center;">
+              <img src="assets/img/advisory/tal_arbel.jpg" alt="Tal Arbel" class="img-fluid">
+              <br><a href="https://www.mcgill.ca/cim/arbel" target="_blank" rel="external nofollow noopener" style="font-size: 1.2em; color: #00356B;">Tal Arbel</a>
+              <p>Full Professor, McGill University</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Advisory Board Section -->
+
+    <!-- ======= Program Committee Section ======= -->
+    <section id="program-committee" class="section-with-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Program Committee</h2>
+          <p class="todo-inline">TODO: roster is being finalized &mdash; recruit before Nov 20, 2026 so the Nov 20&ndash;Dec 2 review window is workable.</p>
+        </div>
+      </div>
+    </section>
+    <!-- End Program Committee Section -->
+
+    <!-- ======= Related Workshops Section ======= -->
+    <section id="related-workshops">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Related Workshops</h2>
+          <p>This is a new AAAI workshop and is not part of a continuing series. It is related to, but distinct from:</p>
+        </div>
+        <ul>
+          <li><strong>Medical World Model Workshop (MICCAI 2026)</strong><span class="todo-inline">TODO: link</span> &mdash; focuses on digital twins and mechanistic simulation for clinical applications; we emphasize the broader AI foundations (causal decision-making, uncertainty, validation).</li>
+          <li><strong>World Models: Understanding, Modelling, and Scaling (ICLR 2026)</strong><span class="todo-inline">TODO: link</span> &mdash; explores world models for agents, planning, and robotics; we focus specifically on healthcare.</li>
+          <li><strong>AI for Medicine and Healthcare (AAAI Bridge Program)</strong><span class="todo-inline">TODO: link</span> &mdash; broadly connects AI with clinical practice; we target dynamic prediction, simulation, and intervention-aware decision support specifically.</li>
+          <li><strong>GenAI4Health (AAAI)</strong><span class="todo-inline">TODO: link</span> &mdash; focuses on generative AI and LLMs for healthcare; we center on longitudinal patient modeling, trajectory simulation, and causal reasoning.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- End Related Workshops Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="section-with-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>For any questions, please contact the organizing committee at <span class="todo-inline">TODO: insert public contact email</span> (main contact: Zhe Xu).</p>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <br><br>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>MedWM</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>. Some photos and pictures are collected from Internet and no copyright infringement is intended.
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
