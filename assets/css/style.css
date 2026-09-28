@@ -1751,3 +1751,18 @@ h6 {
   font-size: 13px;
   color: #ddd;
 }
+/* ===== Larger, airier body typography (mimics AdvML-Frontiers workshop site) ===== */
+#about p,
+#cfp p,
+#accepted-paper p,
+#contact p,
+#related-workshops p,
+#related-workshops li {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* ===== Auto strikethrough for past Key Dates deadlines ===== */
+.past-due {
+  text-decoration: line-through;
+}
