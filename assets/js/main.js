@@ -229,4 +229,20 @@
     })
   });
 
+
+  /**
+   * Auto strikethrough for past deadlines.
+   * Any element with data-deadline="YYYY-MM-DD" gets .past-due once that date has passed.
+   */
+  document.addEventListener('DOMContentLoaded', () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    document.querySelectorAll('[data-deadline]').forEach((el) => {
+      const d = new Date(el.getAttribute('data-deadline') + 'T00:00:00');
+      if (!isNaN(d) && d < today) {
+        el.classList.add('past-due');
+      }
+    });
+  });
+
 })()
