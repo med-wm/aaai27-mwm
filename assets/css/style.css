@@ -1755,9 +1755,7 @@ h6 {
 #about p,
 #cfp p,
 #accepted-paper p,
-#contact p,
-#related-workshops p,
-#related-workshops li {
+#contact p {
   font-size: 17px;
   line-height: 1.8;
 }
