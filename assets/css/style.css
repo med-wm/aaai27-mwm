@@ -705,13 +705,15 @@ h6 {
   padding: 60px 0 30px 0;
 }
 
-#organizers .speaker {
+#organizers .speaker,
+#student-organizers .speaker {
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
 }
 
 #organizers .speaker img,
+#student-organizers .speaker img,
 #advisory-board .speaker img {
   width: 160px;
   height: 160px;
